@@ -1,27 +1,16 @@
 package fr.formation.people.dtos;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-public class AddressCreateDto {
-
-	@Size(min = 1, max = 30)
-	@NotBlank
+public class AddressDto {
+	
 	private String country;
-
-	@Size(min = 1, max = 100)
-	@NotBlank
+	
 	private String street;
-
-	@Size(min = 1, max = 50)
-	@NotBlank
+	
 	private String city;
-
-	@Size(min = 1, max = 20)
-	@NotBlank
+	
 	private String zipCode;
 
-	public AddressCreateDto() {
+	public AddressDto() {
 		// Default no-args constructor
 	}
 
@@ -59,7 +48,8 @@ public class AddressCreateDto {
 
 	@Override
 	public String toString() {
-		return "Address [country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode + "]";
+		return "AddressDto [country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode
+				+ "]";
 	}
 
 }

@@ -3,10 +3,11 @@ package fr.formation.people.dtos;
 public class PersonDto {
 
 	private String firstName;
+
 	private String lastName;
 
 	public PersonDto() {
-		//
+		// Default no-args constructor
 	}
 
 	public String getFirstName() {
@@ -23,6 +24,11 @@ public class PersonDto {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return "PersonDto [firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 }

@@ -6,11 +6,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-
-/*
- * Javax validation:
- * https://docs.jboss.org/hibernate/stable/beanvalidation/api/javax/validation/constraints/package-summary.html
- */
 public class PersonCreateDto {
 
 	@NotBlank
@@ -24,7 +19,7 @@ public class PersonCreateDto {
 	private LocalDate birthDate;
 
 	public PersonCreateDto() {
-		//
+		// Default no-args constructor
 	}
 
 	public String getFirstName() {

@@ -34,7 +34,7 @@ public class PersonController {
 		return person;
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/{id}") // DELETE "/persons/1"
 	public String delete(@PathVariable("id") Long id) {
 		return "Delete Person with id=" + id;
 	}
@@ -43,7 +43,7 @@ public class PersonController {
 	// de la requete HTTP vers une instance de PersonCreateDto
 	// @Valid : cascader la validation sur le DTO, permet si besoin
 	// de ne pas valider un meme DTO
-	@PostMapping
+	@PostMapping // POST "/persons"
 	public void create(@RequestBody @Valid PersonCreateDto dto) {
 		System.out.println(dto);
 	}
