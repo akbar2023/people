@@ -7,11 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "persons")
 public class Person {
+	
+	// 1 person => 1 address => OneToOne
+	// 1 address => n person => ManyToOne
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +31,13 @@ public class Person {
 	private String lastName;
 
 	@Column(nullable = false)
-	private LocalDate birthDate;
+	private LocalDate birthDate; // birth_date
+	
+	// Mapping unidirectionnel
+	// 
+	@ManyToOne
+	@JoinColumn(nullable = true)
+	private Address address; // 123 rue Toto
 
 	public Person() {
 		//
@@ -60,6 +73,13 @@ public class Person {
 
 	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override

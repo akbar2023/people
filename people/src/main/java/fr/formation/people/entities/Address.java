@@ -1,10 +1,14 @@
 package fr.formation.people.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity // Cette classe est mappée avec une table
@@ -26,6 +30,10 @@ public class Address {
 	
 	@Column(length = 30, nullable = false)
 	private String country;
+	
+	// @OneToMany(fetch = FetchType.LAZY)
+	
+	// private List<Person> persons; 
 
 	public Address() {
 		// Default no-args constructor

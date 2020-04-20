@@ -25,8 +25,17 @@ public class PersonServiceImpl implements PersonService {
 		person.setFirstName(dto.getFirstName());
 		person.setLastName(dto.getLastName());
 		person.setBirthDate(dto.getBirthDate());
-		repository.save(person);
+		repository.save(person); // insert into persons values (dto...)
 	}
+	
+//	@Override
+//	public void update(PersonUpdateDto dto) {
+//		Person person = repository.findById(dto.getId());
+//		person.setFirstName(dto.getFirstName());
+//		person.setLastName(dto.getLastName());
+//		person.setBirthDate(dto.getBirthDate());
+//		repository.save(person); // update persons set birsth_date = dto...
+//	}
 
 	@Override
 	public void delete(Long id) {

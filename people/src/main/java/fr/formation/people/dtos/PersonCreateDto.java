@@ -19,7 +19,7 @@ public class PersonCreateDto {
 
 	@NotNull
 	@Past
-	private LocalDate birthDate;
+	private LocalDate birthDate; // (default JSON format YYYY-MM-DD) => Jackson
 
 	public PersonCreateDto() {
 		// Default no-args constructor
