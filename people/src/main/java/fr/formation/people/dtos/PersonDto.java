@@ -28,7 +28,7 @@ public class PersonDto {
 
 	@Override
 	public String toString() {
-		return "PersonDto [firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "{firstName=" + firstName + ", lastName=" + lastName + "}";
 	}
 
 }

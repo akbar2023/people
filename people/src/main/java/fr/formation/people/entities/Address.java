@@ -10,26 +10,33 @@ import javax.persistence.Table;
 @Entity // Cette classe est mappée avec une table
 @Table(name = "addresses") // Nom de table != de la classe
 public class Address {
-	
+
 	@Id // Ce champ est la clef primaire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(length = 100, nullable = false)
+	private String street;
+
+	@Column(length = 50, nullable = false)
+	private String city;
+
+	@Column(length = 20, nullable = false)
+	private String zipCode; // zip_code en base (stratégie de nommage par défaut de Hibernate)
 	
 	@Column(length = 30, nullable = false)
 	private String country;
-	
-	@Column(length = 100, nullable = false)
-	private String street;
-	
-	@Column(length = 50, nullable = false)
-	private String city;
-	
-	@Column(name = "zipcode",length = 20, nullable = false)
-	private String zipCode; // zip_code
-	
-	
+
 	public Address() {
-		
+		// Default no-args constructor
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCountry() {
@@ -63,21 +70,11 @@ public class Address {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", country=" + country + ", street=" + street + ", city=" + city + ", zipCode="
-				+ zipCode + "]";
+		return "{id=" + id + ", country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode
+				+ "}";
 	}
 
-	
-	
 }

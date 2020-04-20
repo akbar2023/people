@@ -1,5 +1,8 @@
 package fr.formation.people.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import fr.formation.people.dtos.AddressCreateDto;
@@ -47,6 +50,21 @@ public class AddressServiceImpl implements AddressService {
 		dto.setZipCode(address.getZipCode());
 		dto.setCountry(address.getCountry());
 		return dto;
+	}
+
+	@Override
+	public List<AddressDto> getAll() {
+		List<Address> addresses = repository.findAll();
+		List<AddressDto> result = new ArrayList<>();
+		for (Address address : addresses) {
+			AddressDto dto = new AddressDto();
+			dto.setStreet(address.getStreet()); 
+			dto.setCity(address.getCity());
+			dto.setZipCode(address.getZipCode());
+			dto.setCountry(address.getCountry());
+			result.add(dto);
+		}
+		return result;
 	}
 
 }

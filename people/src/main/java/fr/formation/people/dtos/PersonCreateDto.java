@@ -5,12 +5,15 @@ import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 public class PersonCreateDto {
 
+	@Size(min = 1, max = 255)
 	@NotBlank
 	private String firstName;
 
+	@Size(min = 1, max = 255)
 	@NotBlank
 	private String lastName;
 
@@ -48,7 +51,7 @@ public class PersonCreateDto {
 
 	@Override
 	public String toString() {
-		return "PersonCreateDto [firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + "]";
+		return "{firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + "}";
 	}
 
 }

@@ -3,6 +3,12 @@ package fr.formation.people.dtos;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+/*
+ * Etre coherent entre les regles de validation et les definitions de colonne dans le mapping JPA. Exemples :
+ * 
+ * Si un input est obligatoire, la colonne correspondante doit etre not null.
+ * Si un input text ne peut depasser 100 caractere, la colonne correspondante doit avoir une longueur de 100.
+ */
 public class AddressCreateDto {
 
 	@Size(min = 1, max = 30)
@@ -59,7 +65,7 @@ public class AddressCreateDto {
 
 	@Override
 	public String toString() {
-		return "Address [country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode + "]";
+		return "{country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode + "}";
 	}
 
 }

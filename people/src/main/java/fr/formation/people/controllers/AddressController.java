@@ -1,5 +1,7 @@
 package fr.formation.people.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -47,6 +49,11 @@ public class AddressController {
 	@GetMapping("/{id}") // GET "/addresses/1" ou 1 correspond à l'id d'une adresse existante en bdd
 	public AddressDto get(@PathVariable("id") Long id) {
 		return service.get(id);
+	}
+	
+	@GetMapping // GET "/addresses" pas d'id, retourne toute la collection de ressources
+	public List<AddressDto> getAll() {
+		return service.getAll();
 	}
 
 }

@@ -48,8 +48,8 @@ public class AddressDto {
 
 	@Override
 	public String toString() {
-		return "AddressDto [country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode
-				+ "]";
+		return "{country=" + country + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode
+				+ "}";
 	}
 
 }
