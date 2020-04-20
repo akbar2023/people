@@ -9,14 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import fr.formation.people.entities.Address;
 
 @Entity
 @Table(name = "persons")
 public class Person {
-	
+
 	// 1 person => 1 address => OneToOne
 	// 1 address => n person => ManyToOne
 
@@ -31,10 +32,13 @@ public class Person {
 	private String lastName;
 
 	@Column(nullable = false)
-	private LocalDate birthDate; // birth_date
-	
+	private LocalDate birthDate; // birth_date (nommage par défaut Hibernate)
+
+	@Transient // Rare mais permet d'ignorer un champ dans le mapping en base
+	private Integer phone;
+
 	// Mapping unidirectionnel
-	// 
+	//
 	@ManyToOne
 	@JoinColumn(nullable = true)
 	private Address address; // 123 rue Toto
@@ -74,17 +78,27 @@ public class Person {
 	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
-	
+
 	public Address getAddress() {
 		return address;
 	}
+
 	public void setAddress(Address address) {
 		this.address = address;
 	}
 
+	public Integer getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Integer phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
-		return "{id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate + "}";
+		return "{id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate
+				+ ", phone=" + phone + ", address=" + address + "}";
 	}
 
 }
