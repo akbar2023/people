@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9892d134-8ca7-46f6-9f48-16632d3cbc96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/dtos/PersonWithExistingAddressDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/people/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/controllers/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/controllers/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/controllers/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/controllers/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/dtos/AddressDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/dtos/AddressDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/dtos/PersonCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/dtos/PersonCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/java/fr/formation/people/services/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/people/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/people/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1atIVUsOwEEW4E8hdAzjvrlXUz8" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/people" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9892d134-8ca7-46f6-9f48-16632d3cbc96" name="Default Changelist" comment="" />
+      <created>1587548486316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587548486316</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588602032037">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588602032037" />
+  </component>
+</project>

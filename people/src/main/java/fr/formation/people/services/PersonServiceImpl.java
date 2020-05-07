@@ -1,8 +1,11 @@
 package fr.formation.people.services;
 
+import fr.formation.people.dtos.PersonWithExistingAddressDto;
+import fr.formation.people.entities.Address;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.formation.people.dtos.PersonCreateDto;
@@ -12,7 +15,10 @@ import fr.formation.people.repositories.PersonJpaRepository;
 
 @Service
 public class PersonServiceImpl implements PersonService {
-	
+
+	@Autowired
+	private AddressService addressService;
+
 	private final PersonJpaRepository repository;
 	
 	public PersonServiceImpl(PersonJpaRepository repository) {
@@ -40,6 +46,18 @@ public class PersonServiceImpl implements PersonService {
 	@Override
 	public void delete(Long id) {
 		repository.deleteById(id);
+	}
+
+	@Override
+	public void createWithAddress(PersonWithExistingAddressDto pandaDto) {
+		Person person = new Person();
+		Address address = addressService.getById(pandaDto.getAddress());
+
+		person.setFirstName(pandaDto.getFirstName());
+		person.setLastName(pandaDto.getLastName());
+		person.setBirthDate(pandaDto.getBirthDate());
+		person.setAddress(address);
+		repository.save(person); // insert into persons values (dto...)
 	}
 
 	@Override

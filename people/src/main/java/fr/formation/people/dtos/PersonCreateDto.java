@@ -1,5 +1,6 @@
 package fr.formation.people.dtos;
 
+import fr.formation.people.entities.Address;
 import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
@@ -27,7 +28,7 @@ public class PersonCreateDto {
 
 	public String getFirstName() {
 		return firstName;
-	}
+}
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;

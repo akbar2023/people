@@ -1,17 +1,32 @@
 package fr.formation.people.dtos;
 
 public class AddressDto {
-	
-	private String country;
+
+	private Long id;
 	
 	private String street;
-	
+
 	private String city;
-	
+
 	private String zipCode;
 
+	private String country;
+
+
 	public AddressDto() {
-		// Default no-args constructor
+
+	}
+
+	public AddressDto(Long id, String street, String city, String zipCode, String country) {
+		this.id = id;
+		this.street = street;
+		this.city = city;
+		this.zipCode = zipCode;
+		this.country = country;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getCountry() {

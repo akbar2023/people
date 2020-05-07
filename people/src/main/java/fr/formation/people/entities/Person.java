@@ -1,7 +1,6 @@
 package fr.formation.people.entities;
 
 import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import fr.formation.people.entities.Address;
 
 @Entity
 @Table(name = "persons")
@@ -34,13 +30,12 @@ public class Person {
 	@Column(nullable = false)
 	private LocalDate birthDate; // birth_date (nommage par défaut Hibernate)
 
-	@Transient // Rare mais permet d'ignorer un champ dans le mapping en base
-	private Integer phone;
+//	@Transient // Rare mais permet d'ignorer un champ dans le mapping en base
+//	private Integer phone;
 
 	// Mapping unidirectionnel
-	//
 	@ManyToOne
-	@JoinColumn(nullable = true)
+	@JoinColumn(nullable = true, name = "address_id")
 	private Address address; // 123 rue Toto
 
 	public Person() {
@@ -87,18 +82,22 @@ public class Person {
 		this.address = address;
 	}
 
-	public Integer getPhone() {
-		return phone;
-	}
-
-	public void setPhone(Integer phone) {
-		this.phone = phone;
-	}
+//	public Integer getPhone() {
+//		return phone;
+//	}
+//
+//	public void setPhone(Integer phone) {
+//		this.phone = phone;
+//	}
 
 	@Override
 	public String toString() {
-		return "{id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate
-				+ ", phone=" + phone + ", address=" + address + "}";
+		return "{id=" + id +
+				", firstName=" + firstName +
+				", lastName=" + lastName +
+				", birthDate=" + birthDate +
+//				", address=" + address +
+				"}";
 	}
 
 }

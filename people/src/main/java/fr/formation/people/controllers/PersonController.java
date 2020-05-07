@@ -1,9 +1,13 @@
 package fr.formation.people.controllers;
 
+import fr.formation.people.dtos.PersonCreateDto;
+import fr.formation.people.dtos.PersonDto;
+import fr.formation.people.dtos.PersonWithExistingAddressDto;
+import fr.formation.people.services.AddressService;
+import fr.formation.people.services.PersonService;
 import java.util.List;
-
 import javax.validation.Valid;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import fr.formation.people.dtos.PersonDto;
-import fr.formation.people.dtos.PersonCreateDto;
-import fr.formation.people.services.PersonService;
 
 // Définir un ensemble de endpoints
 // pour un type de ressources (Person)
@@ -27,6 +27,9 @@ import fr.formation.people.services.PersonService;
 public class PersonController {
 
 	private final PersonService service;
+
+	@Autowired
+	private AddressService addressService;
 
 	public PersonController(PersonService service) {
 		this.service = service;
@@ -49,9 +52,14 @@ public class PersonController {
 	// de la requete HTTP vers une instance de PersonCreateDto
 	// @Valid : cascader la validation sur le DTO, permet si besoin
 	// de ne pas valider un meme DTO
-	@PostMapping // POST "/persons"
-	public void create(@RequestBody @Valid PersonCreateDto dto) {
-		service.create(dto);
+//	@PostMapping // POST "/persons"
+//	public void create(@RequestBody @Valid PersonCreateDto dto) {
+//		service.create(dto);
+//	}
+
+	@PostMapping("/panda")
+	public void createPanda(@RequestBody @Valid PersonWithExistingAddressDto pandaDto) {
+		service.createWithAddress(pandaDto);
 	}
 
 	@GetMapping // GET "/persons" pas d'id, retourne toute la collection de ressources

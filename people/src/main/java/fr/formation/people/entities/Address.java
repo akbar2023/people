@@ -32,7 +32,6 @@ public class Address {
 	// private List<Person> persons; 
 
 	public Address() {
-		// Default no-args constructor
 	}
 
 	public Long getId() {

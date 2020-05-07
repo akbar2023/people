@@ -37,8 +37,8 @@ public class AddressController {
 	}
 
 	@PostMapping // POST "/addresses" avec un JSON dans le corps de la requête
-	public void create(@RequestBody @Valid AddressCreateDto dto) {
-		service.create(dto);
+	public AddressDto create(@RequestBody @Valid AddressCreateDto dto) {
+		return service.create(dto);
 	}
 
 	@DeleteMapping("/{id}") // DELETE "/addresses/1" ou 1 correspond à l'id d'une adresse existante en bdd
