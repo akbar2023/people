@@ -56,4 +56,9 @@ public class AddressController {
 		return service.getAll();
 	}
 
+	@GetMapping("/street/{street}")
+	public List<AddressDto> getAllAddressesByStreet(@PathVariable("street") String street) {
+		return service.getAllByStreet(street);
+	}
+
 }

@@ -17,4 +17,6 @@ public interface AddressService {
 	Address getById(Long id);
 
 	List<AddressDto> getAll();
+
+	List<AddressDto> getAllByStreet(String street);
 }
