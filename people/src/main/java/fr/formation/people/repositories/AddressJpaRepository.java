@@ -15,6 +15,9 @@ public interface AddressJpaRepository extends JpaRepository<Address, Long> {
 	//
 
 
-    @Query("SELECT a FROM Address a WHERE a.street LIKE %:street%")
+    @Query("SELECT a FROM Address a WHERE LOWER(a.street) LIKE LOWER(concat('%', :street,'%'))")
     List<Address> findAllByStreet(@Param("street") String street);
+
+//    List<Address> findAllByStreetIgnoreCase(String street);
+
 }
