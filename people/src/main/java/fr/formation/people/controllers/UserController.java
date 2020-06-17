@@ -2,6 +2,7 @@ package fr.formation.people.controllers;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import fr.formation.people.services.UserService;
 @RequestMapping("/users")
 public class UserController {
 
+	@Autowired
 	private final UserService service;
 
 	public UserController(UserService service) {

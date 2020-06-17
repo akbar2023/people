@@ -8,4 +8,6 @@ import fr.formation.people.entities.User;
 @Repository
 public interface UserJpaRepository extends JpaRepository<User, Long> {
 	// ....
+
+    User findByUsername(String username);
 }

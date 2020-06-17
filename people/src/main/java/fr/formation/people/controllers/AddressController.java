@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +26,8 @@ import fr.formation.people.services.AddressService;
 @CrossOrigin
 public class AddressController {
 
-	// Inject une instance de AddressServiceImpl.
-	// AddressServiceImpl doit etre annotée @Service
-	// @Autowired ou par constructeur
+
+	@Autowired
 	private final AddressService service;
 
 	// Injection par constructeur, permet de marquer
@@ -37,7 +37,7 @@ public class AddressController {
 	}
 
 	@PostMapping // POST "/addresses" avec un JSON dans le corps de la requête
-	public AddressDto create(@RequestBody @Valid AddressCreateDto dto) {
+	public AddressDto create(@RequestBody AddressCreateDto dto) {
 		return service.create(dto);
 	}
 

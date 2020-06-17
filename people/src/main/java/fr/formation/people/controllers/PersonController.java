@@ -26,10 +26,11 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class PersonController {
 
+	@Autowired
 	private final PersonService service;
 
-	@Autowired
-	private AddressService addressService;
+//	@Autowired
+//	private final AddressService addressService;
 
 	public PersonController(PersonService service) {
 		this.service = service;
